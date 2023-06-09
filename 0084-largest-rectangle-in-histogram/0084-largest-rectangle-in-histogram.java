@@ -22,7 +22,6 @@ class Solution {
                 maxheap.pop();
             }
             if (!maxheap.isEmpty()) {
-                // element before next small
                 nse[i] = maxheap.peek();
             } else {
                 nse[i] = n;
@@ -43,7 +42,6 @@ class Solution {
                 maxheap.pop();
             }
             if (!maxheap.isEmpty()) {
-                // element after previous small
                 pse[i] = maxheap.peek();
             } else {
                 pse[i] = -1;
