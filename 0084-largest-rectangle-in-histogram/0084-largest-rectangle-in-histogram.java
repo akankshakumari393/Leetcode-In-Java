@@ -6,7 +6,7 @@ class Solution {
         int max = 0;
 
         for (int i = 0; i < heights.length; i++) {
-            max = Math.max(max, heights[i] * (nse[i] - pse[i] + 1));
+            max = Math.max(max, heights[i] * ((nse[i]-1) - (pse[i]+1) + 1));
         }
         return max;
     }
@@ -23,9 +23,9 @@ class Solution {
             }
             if (!maxheap.isEmpty()) {
                 // element before next small
-                nse[i] = maxheap.peek() - 1;
+                nse[i] = maxheap.peek();
             } else {
-                nse[i] = n - 1;
+                nse[i] = n;
             }
             maxheap.push(i);
         }
@@ -44,9 +44,9 @@ class Solution {
             }
             if (!maxheap.isEmpty()) {
                 // element after previous small
-                pse[i] = maxheap.peek() + 1;
+                pse[i] = maxheap.peek();
             } else {
-                pse[i] = 0;
+                pse[i] = -1;
             }
             maxheap.push(i);
         }
