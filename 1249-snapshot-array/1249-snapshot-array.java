@@ -25,6 +25,7 @@ class SnapshotArray {
         return snapId - 1;
     }
 
+    //  It should be noted that snap_id may not be present in the record list. Therefore, we can use binary search to find the record with the highest snapshot ID that is less than or equal to the given snap_id
     public int get(int index, int snap_id) {
         List<int[]> history = histories.get(index);
         // for (int i = 0; i < history.size(); i++) {
